@@ -1,5 +1,6 @@
 package com.ethos.interacaoapi.service;
 
+import com.ethos.interacaoapi.repository.InteracaoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
