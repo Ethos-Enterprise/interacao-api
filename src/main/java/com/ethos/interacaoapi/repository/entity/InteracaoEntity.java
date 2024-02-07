@@ -2,24 +2,19 @@ package com.ethos.interacaoapi.repository.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Table(name= "INTERACAO")
 @Entity
 
 public class InteracaoEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     private String status;
@@ -27,4 +22,13 @@ public class InteracaoEntity {
     private LocalDate data;
 
     private UUID fkPrestadoraServico;
+
+    @Builder(toBuilder = true)
+    public InteracaoEntity(UUID id, String status, LocalDate data, UUID fkPrestadoraServico) {
+        this.id = UUID.randomUUID();
+        this.status = status;
+        this.data = LocalDate.now();
+        this.fkPrestadoraServico = fkPrestadoraServico;
+    }
+
 }
