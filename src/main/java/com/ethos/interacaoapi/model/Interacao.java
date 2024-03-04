@@ -1,17 +1,23 @@
 package com.ethos.interacaoapi.model;
 
+import com.ethos.interacaoapi.repository.entity.statusenum.StatusInteracaoEnum;
 import lombok.Builder;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-public record Interacao(String status, LocalDate data, UUID fkPrestadoraServico) {
+public record Interacao(
+        StatusInteracaoEnum status,
+        LocalDate data,
+        UUID fkServico,
+        UUID fkEmpresa) {
 
     @Builder(toBuilder = true)
-    public Interacao( String status, LocalDate data, UUID fkPrestadoraServico) {
+    public Interacao( StatusInteracaoEnum status, LocalDate data, UUID fkServico, UUID fkEmpresa ) {
         this.status = status;
         this.data = LocalDate.now();
-        this.fkPrestadoraServico = fkPrestadoraServico;
+        this.fkServico = fkServico;
+        this.fkEmpresa = fkEmpresa;
     }
 
 }

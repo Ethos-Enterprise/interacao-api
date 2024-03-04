@@ -21,14 +21,17 @@ public class InteracaoEntity {
 
     private LocalDate data;
 
-    private UUID fkPrestadoraServico;
+    private UUID fkServico;
+
+    private UUID fkEmpresa;
 
     @Builder(toBuilder = true)
-    public InteracaoEntity(UUID id, String status, LocalDate data, UUID fkPrestadoraServico) {
+    public InteracaoEntity(UUID id, String status, LocalDate data, UUID fkServico, UUID fkEmpresa) {
         this.id = UUID.randomUUID();
         this.status = status;
         this.data = LocalDate.now();
-        this.fkPrestadoraServico = fkPrestadoraServico;
+        this.fkServico = fkServico;
+        this.fkEmpresa = fkEmpresa;
     }
 
 }
