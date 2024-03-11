@@ -7,7 +7,7 @@ public record InteracaoResponse (
         UUID id,
         String status,
         LocalDate data,
-        UUID fkPrestadoraServico,
+        UUID fkServico,
         UUID fkEmpresa
 
 ) {

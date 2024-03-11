@@ -1,20 +1,21 @@
 package com.ethos.interacaoapi.repository.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
-
+import org.hibernate.annotations.GenericGenerator;
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name= "INTERACAO")
 @Entity
-
+@Table(name= "INTERACAO")
 public class InteracaoEntity {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false)
     private UUID id;
 
     private String status;
@@ -26,12 +27,10 @@ public class InteracaoEntity {
     private UUID fkEmpresa;
 
     @Builder(toBuilder = true)
-    public InteracaoEntity(UUID id, String status, LocalDate data, UUID fkServico, UUID fkEmpresa) {
-        this.id = UUID.randomUUID();
+    public InteracaoEntity(String status, LocalDate data, UUID fkServico, UUID fkEmpresa) {
         this.status = status;
-        this.data = LocalDate.now();
+        this.data = data != null ? data : LocalDate.now();
         this.fkServico = fkServico;
         this.fkEmpresa = fkEmpresa;
     }
-
 }

@@ -1,7 +1,5 @@
 package com.ethos.interacaoapi.service;
 
-import com.ethos.interacaoapi.api.EmpresaClient;
-import com.ethos.interacaoapi.api.empresadto.EmpresaDTO;
 import com.ethos.interacaoapi.controller.request.InteracaoRequest;
 import com.ethos.interacaoapi.controller.response.InteracaoResponse;
 import com.ethos.interacaoapi.exception.InteracaoNaoExisteException;
@@ -12,7 +10,6 @@ import com.ethos.interacaoapi.model.Interacao;
 import com.ethos.interacaoapi.repository.InteracaoRepository;
 import com.ethos.interacaoapi.repository.entity.InteracaoEntity;
 import com.ethos.interacaoapi.repository.entity.statusenum.StatusInteracaoEnum;
-import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +19,6 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-
 public class InteracaoService {
     private final InteracaoRepository repository;
     private final InteracaoMapper mapper;

@@ -36,8 +36,8 @@ public class InteracaoController {
     }
 
     @DeleteMapping("/{id}")
-    public InteracaoResponse deleteInteracao(@PathVariable UUID id) {
-        return service.deleteInteracao(id);
+    public void deleteInteracao(@PathVariable UUID id) {
+        service.deleteInteracao(id);
     }
 
 }
