@@ -1,3 +1,7 @@
+server:
+  port: 8083
+  application:
+    name: interacao-api
 spring:
   datasource:
     url: jdbc:postgresql://postgres-interacao:5442/postgres
