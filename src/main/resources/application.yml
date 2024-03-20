@@ -5,7 +5,7 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://postgres-interacao:5432/postgres
-    username: postgres
+    username: admin
     password: senha123
     driver-class-name: org.postgresql.Driver
   jpa:
