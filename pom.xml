@@ -139,6 +139,7 @@
 			</plugin>
 
 		</plugins>
+		<finalName>interacao-app</finalName>
 	</build>
 
 </project>
