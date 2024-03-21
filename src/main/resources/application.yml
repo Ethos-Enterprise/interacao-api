@@ -16,7 +16,7 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  eureka:
-    client:
-      service-url:
-        defaultZone: http://172.23.0.1:8761/eureka
+eureka:
+   client:
+     service-url:
+       defaultZone: http://172.23.0.1:8761/eureka
