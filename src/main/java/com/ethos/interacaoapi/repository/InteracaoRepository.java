@@ -15,6 +15,6 @@ public interface InteracaoRepository extends JpaRepository<InteracaoEntity, UUID
 //criar os coiso dynamic finder aqui
 List<InteracaoEntity> findByStatus(String statusAprovacao);
 
-    Optional<InteracaoEntity> findByFkEmpresa(UUID fkEmpresa);
+    List<InteracaoEntity> findByFkEmpresa(UUID fkEmpresa);
 
 }

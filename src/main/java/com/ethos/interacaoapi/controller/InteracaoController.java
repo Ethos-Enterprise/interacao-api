@@ -36,7 +36,7 @@ public class InteracaoController {
     }
 
     @GetMapping("/empresa/{fkEmpresa}")
-    public InteracaoResponse getInteracaoByFkEmpresa(@PathVariable UUID fkEmpresa){
+    public List<InteracaoResponse> getInteracaoByFkEmpresa(@PathVariable UUID fkEmpresa){
         return service.getInteracaoByFkEmpresa(fkEmpresa);
     }
 
