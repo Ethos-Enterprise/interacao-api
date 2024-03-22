@@ -59,6 +59,13 @@ public class InteracaoService {
         return interacaoEntityList.stream().map(responseMapper::from).collect(Collectors.toList());
     }
 
+    public InteracaoResponse getInteracaoByFkEmpresa(UUID fkEmpresa) {
+        InteracaoEntity interacao = repository.findByFkEmpresa(fkEmpresa).orElseThrow(
+                () -> new InteracaoNaoExisteException("Portfólio com o id %s não existe".formatted(fkEmpresa))
+        );
+        return responseMapper.from(interacao);
+    }
+
     public void deleteInteracao(UUID id) {
         InteracaoEntity entity = repository.findById(id)
                 .orElseThrow(() -> new InteracaoNaoExisteException("Interacao com o id " + id + " não existe"));

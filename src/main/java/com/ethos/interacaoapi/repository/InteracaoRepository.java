@@ -7,11 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface InteracaoRepository extends JpaRepository<InteracaoEntity, UUID> {
 
 //criar os coiso dynamic finder aqui
 List<InteracaoEntity> findByStatus(String statusAprovacao);
+
+    Optional<InteracaoEntity> findByFkEmpresa(UUID fkEmpresa);
 
 }

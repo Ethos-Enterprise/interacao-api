@@ -35,6 +35,11 @@ public class InteracaoController {
         return service.getAllInteracoes();
     }
 
+    @GetMapping("/{fkEmpresa}")
+    public InteracaoResponse getInteracaoByFkEmpresa(@PathVariable UUID fkEmpresa){
+        return service.getInteracaoByFkEmpresa(fkEmpresa);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteInteracao(@PathVariable UUID id) {
         service.deleteInteracao(id);
