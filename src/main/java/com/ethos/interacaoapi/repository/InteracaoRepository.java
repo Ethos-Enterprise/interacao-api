@@ -17,4 +17,6 @@ List<InteracaoEntity> findByStatus(String statusAprovacao);
 
     List<InteracaoEntity> findByFkEmpresa(UUID fkEmpresa);
 
+    List<InteracaoEntity> findByFkServico(UUID fkServico);
+
 }

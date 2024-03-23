@@ -65,6 +65,11 @@ public class InteracaoService {
         return interacoes.stream().map(responseMapper::from).collect(Collectors.toList());
     }
 
+    public List<InteracaoResponse> getInteracaoByFkServico(UUID fkServico) {
+        List<InteracaoEntity> interacoes = repository.findByFkServico(fkServico);
+        return interacoes.stream().map(responseMapper::from).collect(Collectors.toList());
+    }
+
     public void deleteInteracao(UUID id) {
         InteracaoEntity entity = repository.findById(id)
                 .orElseThrow(() -> new InteracaoNaoExisteException("Interacao com o id " + id + " não existe"));
